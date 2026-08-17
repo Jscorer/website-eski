@@ -274,16 +274,17 @@ h1 {
 .primary-link {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 27px;
   min-width: 198px;
-  padding: 15px 15px 15px 18px;
+  padding: 15px 18px;
   background: var(--acid);
   color: var(--paper);
   font-family: var(--mono);
   font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 0.09em;
+  text-align: center;
   text-transform: uppercase;
   transition: background 180ms ease, transform 180ms ease, color 180ms ease;
 }
