@@ -141,11 +141,6 @@ a {
   color: var(--paper);
 }
 
-.header-arrow {
-  font-size: 1rem;
-  line-height: 0.5;
-}
-
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(350px, 0.72fr);
@@ -298,20 +293,6 @@ h1 {
   background: var(--paper);
   color: var(--ink);
   transform: translate(3px, -3px);
-}
-
-.primary-link-arrow {
-  display: grid;
-  width: 25px;
-  height: 25px;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  font-size: 0.9rem;
-}
-
-.primary-link:hover .primary-link-arrow,
-.primary-link:focus-visible .primary-link-arrow {
-  border-color: var(--ink);
 }
 
 .action-note {
@@ -566,7 +547,7 @@ h2 em {
 .link-card {
   position: relative;
   display: grid;
-  grid-template-columns: 32px 45px minmax(0, 1fr) 36px;
+  grid-template-columns: 32px 45px minmax(0, 1fr);
   align-items: center;
   min-height: 118px;
   gap: 18px;
@@ -667,19 +648,6 @@ h2 em {
 .link-card:hover .link-handle,
 .link-card:focus-visible .link-handle {
   color: rgba(255, 255, 255, 0.85);
-}
-
-.link-arrow {
-  position: relative;
-  z-index: 1;
-  justify-self: end;
-  font-size: 1.35rem;
-  transition: transform 200ms ease;
-}
-
-.link-card:hover .link-arrow,
-.link-card:focus-visible .link-arrow {
-  transform: translate(4px, -4px);
 }
 
 .instagram-card {
@@ -790,11 +758,6 @@ h2 em {
 .footer-actions a:hover,
 .footer-actions a:focus-visible {
   color: var(--acid);
-}
-
-.footer-actions span {
-  color: var(--coral);
-  font-size: 0.95rem;
 }
 
 .footer-bottom {
@@ -958,7 +921,7 @@ h2 em {
   }
 
   .link-card {
-    grid-template-columns: 25px 44px minmax(0, 1fr) 28px;
+    grid-template-columns: 25px 44px minmax(0, 1fr);
     min-height: 116px;
     gap: 13px;
     padding: 16px 15px;
@@ -1049,7 +1012,7 @@ h2 em {
   }
 
   .link-card {
-    grid-template-columns: 20px 38px minmax(0, 1fr) 22px;
+    grid-template-columns: 20px 38px minmax(0, 1fr);
     gap: 9px;
     padding: 14px 12px;
   }
