@@ -296,6 +296,10 @@ h1 {
   transform: translate(3px, -3px);
 }
 
+.primary-link-red {
+  background: var(--coral);
+}
+
 .action-note {
   color: var(--muted);
   font-family: var(--mono);
@@ -705,6 +709,14 @@ h2 em {
   background: var(--coral);
 }
 
+.signal-strip:empty {
+  display: block;
+  height: 1px;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid var(--line);
+}
+
 .site-footer {
   padding: 50px 4.4vw 26px;
 }
@@ -1036,5 +1048,311 @@ h2 em {
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Label home portal ===== */
+.site-header.navbar {
+  grid-template-columns: auto 1fr;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+}
+
+.navbar-links a {
+  color: var(--paper);
+  transition: color 180ms ease;
+}
+
+.navbar-links a[aria-current="page"] {
+  color: var(--acid);
+}
+
+.navbar-links a:hover,
+.navbar-links a:focus-visible {
+  color: var(--acid);
+}
+
+.home-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.62fr);
+}
+
+.home-hero h1 {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  column-gap: 0.02em;
+}
+
+.home-title-name {
+  margin-left: -0.02em;
+  color: var(--acid);
+  font-size: clamp(3.4rem, 8vw, 7.6rem);
+  letter-spacing: -0.01em;
+  line-height: 0.85;
+}
+
+.home-title-tld {
+  width: max-content;
+  margin-left: 0.1em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--coral);
+  text-shadow: 4px 4px 0 rgba(227, 49, 58, 0.16);
+  font-size: clamp(2.3rem, 5.5vw, 5.6rem);
+  line-height: 1;
+}
+
+.home-title-tld span {
+  color: var(--coral);
+  -webkit-text-stroke: 0;
+}
+
+.label-plate {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  justify-self: end;
+  width: min(100%, 480px);
+  aspect-ratio: 1;
+  padding: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: #1b2860;
+  box-shadow: 16px 17px 0 var(--coral);
+  transform: rotate(-2deg);
+  isolation: isolate;
+}
+
+.label-plate::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(59, 109, 246, 0.28));
+  content: "";
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.label-plate-top,
+.label-plate-bottom {
+  position: relative;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
+.label-plate-bottom {
+  color: var(--muted);
+}
+
+.label-plate-mark {
+  position: relative;
+  z-index: 2;
+  color: var(--acid);
+  font-family: var(--display);
+  font-size: clamp(9rem, 20vw, 15rem);
+  line-height: 0.7;
+}
+
+.roster-section,
+.releases-section {
+  padding: 92px 4.4vw 116px;
+  border-top: 1px solid var(--line);
+}
+
+.roster-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.artist-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(15, 26, 69, 0.7);
+  transition: color 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.artist-card:hover,
+.artist-card:focus-visible {
+  border-color: var(--acid);
+  transform: translateY(-4px);
+}
+
+.artist-card-media {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.artist-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.72) contrast(1.06);
+}
+
+.artist-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 22px 24px;
+}
+
+.artist-card-index {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.14em;
+}
+
+.artist-card-name {
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: 2.4rem;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.artist-card-tag {
+  color: var(--acid);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.artist-card-soon {
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-style: dashed;
+  background: transparent;
+  text-align: center;
+}
+
+.artist-card-soon .artist-card-name,
+.artist-card-soon .artist-card-tag {
+  color: var(--muted);
+}
+
+.releases-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 49px;
+}
+
+.release-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: rgba(15, 26, 69, 0.7);
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.release-card:hover,
+.release-card:focus-visible {
+  border-color: var(--coral);
+  transform: translateY(-4px);
+}
+
+.release-card-media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.release-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85) contrast(1.04);
+}
+
+.release-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 18px 20px 22px;
+}
+
+.release-card-type {
+  color: var(--coral);
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.release-card-title {
+  color: var(--paper);
+  font-family: var(--display);
+  font-size: 1.6rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.release-card-artist {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .roster-section,
+  .releases-section {
+    padding-right: 2vw;
+    padding-left: 2vw;
+  }
+
+  .roster-grid,
+  .releases-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 780px) {
+  .site-header.navbar {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px 0;
+  }
+
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 14px 22px;
+  }
+
+  .label-plate {
+    width: calc(100% - 15px);
+    margin-right: 3px;
+  }
+
+  .roster-grid,
+  .releases-grid {
+    grid-template-columns: 1fr;
   }
 }
