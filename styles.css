@@ -683,6 +683,10 @@ h2 em {
   --card-accent: #3b6df6;
 }
 
+.soundcloud-card {
+  --card-accent: var(--coral);
+}
+
 .signal-strip {
   display: flex;
   align-items: center;
@@ -1354,5 +1358,81 @@ h2 em {
   .roster-grid,
   .releases-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero .eyebrow,
+  .section-heading .eyebrow {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    align-items: center;
+  }
+
+  .home-hero h1 {
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .hero-intro,
+  .section-intro {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hero-details {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    align-items: center;
+  }
+
+  .portrait-wrap,
+  .label-plate {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .section-heading {
+    text-align: center;
+  }
+
+  .site-header.navbar .brand {
+    justify-self: center;
+  }
+
+  .navbar-links {
+    justify-content: center;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 18px;
+    padding-bottom: 40px;
+  }
+
+  .footer-main p {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .footer-actions {
+    grid-column: auto;
+    grid-row: auto;
+    align-items: center;
+  }
+
+  .footer-bottom {
+    justify-content: center;
+    text-align: center;
   }
 }
