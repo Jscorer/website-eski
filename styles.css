@@ -1259,3 +1259,9 @@ h2 em {
     text-align: center;
   }
 }
+
+@media (min-width: 781px) {
+  .hero-title-long .hero-title-name {
+    font-size: clamp(3.6rem, 8vw, 8rem);
+  }
+}
