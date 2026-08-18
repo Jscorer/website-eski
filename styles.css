@@ -112,35 +112,6 @@ a {
   line-height: 1;
 }
 
-.header-status {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  color: var(--muted);
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--acid);
-  box-shadow: 0 0 0 4px rgba(59, 109, 246, 0.35);
-}
-
-.header-contact {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  justify-self: end;
-  color: #9db8ff;
-  transition: color 180ms ease;
-}
-
-.header-contact:hover,
-.header-contact:focus-visible {
-  color: var(--paper);
-}
-
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(350px, 0.72fr);
@@ -300,14 +271,6 @@ h1 {
   background: var(--coral);
 }
 
-.action-note {
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-}
-
 .portrait-wrap {
   width: min(100%, 480px);
   justify-self: end;
@@ -364,83 +327,11 @@ h1 {
   left: 17px;
 }
 
-.portrait-fallback,
 .portrait-image {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-}
-
-.portrait-fallback {
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 46% 38%, rgba(255, 255, 255, 0.85) 0 19%, transparent 19.4%),
-    radial-gradient(ellipse at 47% 37%, rgba(100, 118, 200, 0.7) 0 30%, transparent 30.4%),
-    linear-gradient(118deg, #4a5ba0 0%, #2a3970 42%, #0f1a45 100%);
-  transition: opacity 300ms ease;
-}
-
-.portrait-fallback::before {
-  position: absolute;
-  top: 16%;
-  left: 17%;
-  width: 66%;
-  height: 74%;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 49% 49% 44% 44%;
-  box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.06), 0 0 0 58px rgba(255, 255, 255, 0.05);
-  content: "";
-  transform: rotate(-7deg);
-}
-
-.portrait-fallback::after {
-  position: absolute;
-  right: -9%;
-  bottom: -4%;
-  width: 78%;
-  height: 33%;
-  border-radius: 50% 50% 0 0;
-  background: rgba(10, 18, 50, 0.8);
-  content: "";
-  transform: rotate(-3deg);
-}
-
-.fallback-mark {
-  position: absolute;
-  top: 20%;
-  left: 23%;
-  z-index: 1;
-  color: rgba(143, 163, 214, 0.9);
-  font-family: var(--display);
-  font-size: clamp(13rem, 22vw, 20rem);
-  line-height: 0.7;
-  mix-blend-mode: multiply;
-  transform: rotate(-7deg);
-}
-
-.fallback-cross {
-  position: absolute;
-  top: 49%;
-  left: 8%;
-  z-index: 2;
-  width: 84%;
-  height: 1px;
-  background: var(--coral);
-  box-shadow: 0 9px 0 rgba(227, 49, 58, 0.45);
-}
-
-.fallback-caption {
-  position: absolute;
-  bottom: 13%;
-  left: 17px;
-  z-index: 4;
-  color: var(--paper);
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  line-height: 1.65;
-  text-transform: uppercase;
 }
 
 .portrait-image {
@@ -453,10 +344,6 @@ h1 {
 
 .portrait-frame.photo-ready .portrait-image {
   opacity: 1;
-}
-
-.portrait-frame.photo-ready .portrait-fallback {
-  opacity: 0;
 }
 
 .portrait-stamp {
@@ -482,24 +369,6 @@ h1 {
   font-family: var(--display);
   font-size: 2rem;
   letter-spacing: 0.1em;
-}
-
-.portrait-caption {
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-  padding-top: 20px;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 0.58rem;
-  letter-spacing: 0.09em;
-  line-height: 1.45;
-  text-transform: uppercase;
-}
-
-.portrait-caption span:last-child {
-  color: var(--acid);
-  text-align: right;
 }
 
 .links-section {
@@ -835,14 +704,6 @@ h2 em {
     min-height: 74px;
   }
 
-  .header-status {
-    display: none;
-  }
-
-  .header-contact {
-    font-size: 0.6rem;
-  }
-
   .hero {
     display: flex;
     flex-direction: column;
@@ -1082,18 +943,35 @@ h2 em {
 }
 
 .home-hero {
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.62fr);
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.home-hero .hero-copy {
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.home-hero .hero-intro {
+  max-width: 620px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .home-hero h1 {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: baseline;
-  column-gap: 0.02em;
+  justify-content: center;
+  column-gap: 0.08em;
+}
+
+.home-hero .hero-actions {
+  justify-content: center;
 }
 
 .home-title-name {
-  margin-left: -0.02em;
   color: var(--acid);
   font-size: clamp(3.4rem, 8vw, 7.6rem);
   letter-spacing: -0.01em;
@@ -1102,72 +980,11 @@ h2 em {
 
 .home-title-tld {
   width: max-content;
-  margin-left: 0.1em;
   color: transparent;
   -webkit-text-stroke: 1px var(--coral);
   text-shadow: 4px 4px 0 rgba(227, 49, 58, 0.16);
-  font-size: clamp(2.3rem, 5.5vw, 5.6rem);
-  line-height: 1;
-}
-
-.home-title-tld span {
-  color: var(--coral);
-  -webkit-text-stroke: 0;
-}
-
-.label-plate {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  justify-self: end;
-  width: min(100%, 480px);
-  aspect-ratio: 1;
-  padding: 30px;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background: #1b2860;
-  box-shadow: 16px 17px 0 var(--coral);
-  transform: rotate(-2deg);
-  isolation: isolate;
-}
-
-.label-plate::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  width: 40%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(59, 109, 246, 0.28));
-  content: "";
-  mix-blend-mode: screen;
-  pointer-events: none;
-}
-
-.label-plate-top,
-.label-plate-bottom {
-  position: relative;
-  z-index: 2;
-  color: rgba(255, 255, 255, 0.8);
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  line-height: 1.7;
-  text-transform: uppercase;
-}
-
-.label-plate-bottom {
-  color: var(--muted);
-}
-
-.label-plate-mark {
-  position: relative;
-  z-index: 2;
-  color: var(--acid);
-  font-family: var(--display);
-  font-size: clamp(9rem, 20vw, 15rem);
-  line-height: 0.7;
+  font-size: clamp(3.4rem, 8vw, 7.6rem);
+  line-height: 0.85;
 }
 
 .roster-section,
@@ -1350,11 +1167,6 @@ h2 em {
     gap: 14px 22px;
   }
 
-  .label-plate {
-    width: calc(100% - 15px);
-    margin-right: 3px;
-  }
-
   .roster-grid,
   .releases-grid {
     grid-template-columns: 1fr;
@@ -1394,8 +1206,7 @@ h2 em {
     align-items: center;
   }
 
-  .portrait-wrap,
-  .label-plate {
+  .portrait-wrap {
     margin-right: auto;
     margin-left: auto;
   }
