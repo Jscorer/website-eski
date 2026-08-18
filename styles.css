@@ -660,6 +660,19 @@ h2 em {
   text-transform: uppercase;
 }
 
+.footer-disclaimer {
+  margin: 22px 0 0;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+  text-transform: none;
+  opacity: 0.75;
+}
+
 :focus-visible {
   outline: 2px solid var(--acid);
   outline-offset: 5px;
@@ -1244,6 +1257,10 @@ h2 em {
 
   .footer-bottom {
     justify-content: center;
+    text-align: center;
+  }
+
+  .footer-disclaimer {
     text-align: center;
   }
 }
